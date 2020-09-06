@@ -16,5 +16,11 @@ namespace Information_Management_System_Acer_Logistics_
 		{
 			InitializeComponent();
 		}
+
+		private void Form1_Load(object sender, EventArgs e)
+		{
+			Login userLogin = new Login();
+			userLogin.ShowDialog();
+		}
 	}
 }
