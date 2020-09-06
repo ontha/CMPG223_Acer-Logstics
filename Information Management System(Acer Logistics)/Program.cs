@@ -16,7 +16,7 @@ namespace Information_Management_System_Acer_Logistics_
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new Form1());
+			Application.Run(new Login());
 		}
 	}
 }
