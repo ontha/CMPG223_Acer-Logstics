@@ -18,10 +18,14 @@ namespace Information_Management_System_Acer_Logistics_
 		{
 			InitializeComponent();
 		}
+
+		
 		private SqlConnection con;
 		private SqlDataAdapter adp;
 		private SqlCommand comm;
 		private DataSet ds;
+		private SqlDataReader dRead;
+		string conStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Acer\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Management System(Acer Logistics)\ManagementDB.mdf;Integrated Security=True";
 		private void Form1_Load(object sender, EventArgs e)
 		{
 			
@@ -29,20 +33,31 @@ namespace Information_Management_System_Acer_Logistics_
 		public bool authenticate(string userName, string password)
 		{
 			bool results = false;
-			
-			
+			con = new SqlConnection(conStr);
 			con.Open();
-			MessageBox.Show("Opened");
-			con.Close();
+			string readAll = "SELECT * FROM Login";
+			comm = new SqlCommand(readAll, con);
+			dRead = comm.ExecuteReader();
 
+			while (dRead.Read())
+			{
+				if (dRead.GetValue(1).ToString() == userName && dRead.GetValue(2).ToString() == password)
+					results = true;
+			}
+			
+			con.Close();
 
 			return results; 
 		}
 		private void button1_Click(object sender, EventArgs e)
 		{
-			/*AcerLogisics my = new AcerLogisics();
-			my.ShowDialog();*/
-			authenticate(txtID.Text, txtPassword.Text);
+			AcerLogisics my = new AcerLogisics();
+
+			if (authenticate(txtID.Text, txtPassword.Text))
+				my.ShowDialog();
+			else
+				errorProvider1.SetError(txtPassword, "Invaid password");
+			txtPassword.Text = string.Empty;
 		}
 
 		private void showCheckBox_CheckedChanged(object sender, EventArgs e)
