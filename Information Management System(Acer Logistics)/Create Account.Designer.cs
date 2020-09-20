@@ -38,18 +38,20 @@
 			this.lblBack = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
+			this.label6 = new System.Windows.Forms.Label();
+			this.txtId = new System.Windows.Forms.TextBox();
 			this.SuspendLayout();
 			// 
 			// txtUsername
 			// 
-			this.txtUsername.Location = new System.Drawing.Point(182, 62);
+			this.txtUsername.Location = new System.Drawing.Point(183, 95);
 			this.txtUsername.Name = "txtUsername";
 			this.txtUsername.Size = new System.Drawing.Size(100, 20);
 			this.txtUsername.TabIndex = 0;
 			// 
 			// txtPassword
 			// 
-			this.txtPassword.Location = new System.Drawing.Point(183, 103);
+			this.txtPassword.Location = new System.Drawing.Point(183, 143);
 			this.txtPassword.Name = "txtPassword";
 			this.txtPassword.Size = new System.Drawing.Size(100, 20);
 			this.txtPassword.TabIndex = 1;
@@ -57,7 +59,7 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(70, 69);
+			this.label1.Location = new System.Drawing.Point(71, 102);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(107, 13);
 			this.label1.TabIndex = 2;
@@ -66,7 +68,7 @@
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(71, 114);
+			this.label2.Location = new System.Drawing.Point(71, 154);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(106, 13);
 			this.label2.TabIndex = 3;
@@ -75,7 +77,7 @@
 			// label3
 			// 
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(84, 136);
+			this.label3.Location = new System.Drawing.Point(84, 176);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(93, 13);
 			this.label3.TabIndex = 4;
@@ -83,14 +85,14 @@
 			// 
 			// txtConfirm
 			// 
-			this.txtConfirm.Location = new System.Drawing.Point(183, 129);
+			this.txtConfirm.Location = new System.Drawing.Point(183, 169);
 			this.txtConfirm.Name = "txtConfirm";
 			this.txtConfirm.Size = new System.Drawing.Size(100, 20);
 			this.txtConfirm.TabIndex = 5;
 			// 
 			// btnEnter
 			// 
-			this.btnEnter.Location = new System.Drawing.Point(144, 170);
+			this.btnEnter.Location = new System.Drawing.Point(144, 210);
 			this.btnEnter.Name = "btnEnter";
 			this.btnEnter.Size = new System.Drawing.Size(75, 28);
 			this.btnEnter.TabIndex = 6;
@@ -101,7 +103,7 @@
 			// 
 			this.lblBack.AutoSize = true;
 			this.lblBack.ForeColor = System.Drawing.SystemColors.Highlight;
-			this.lblBack.Location = new System.Drawing.Point(36, 180);
+			this.lblBack.Location = new System.Drawing.Point(36, 220);
 			this.lblBack.Name = "lblBack";
 			this.lblBack.Size = new System.Drawing.Size(32, 13);
 			this.lblBack.TabIndex = 7;
@@ -111,7 +113,7 @@
 			// 
 			this.label5.AutoSize = true;
 			this.label5.ForeColor = System.Drawing.Color.Red;
-			this.label5.Location = new System.Drawing.Point(132, 85);
+			this.label5.Location = new System.Drawing.Point(133, 118);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(58, 13);
 			this.label5.TabIndex = 8;
@@ -128,11 +130,29 @@
 			this.label4.TabIndex = 9;
 			this.label4.Text = "New User";
 			// 
+			// label6
+			// 
+			this.label6.AutoSize = true;
+			this.label6.Location = new System.Drawing.Point(107, 75);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(70, 13);
+			this.label6.TabIndex = 10;
+			this.label6.Text = "Enter your Id:";
+			// 
+			// txtId
+			// 
+			this.txtId.Location = new System.Drawing.Point(183, 67);
+			this.txtId.Name = "txtId";
+			this.txtId.Size = new System.Drawing.Size(100, 20);
+			this.txtId.TabIndex = 11;
+			// 
 			// Create_Account
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(345, 210);
+			this.ClientSize = new System.Drawing.Size(345, 258);
+			this.Controls.Add(this.txtId);
+			this.Controls.Add(this.label6);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.label5);
 			this.Controls.Add(this.lblBack);
@@ -162,5 +182,7 @@
 		private System.Windows.Forms.Label lblBack;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.TextBox txtId;
 	}
 }

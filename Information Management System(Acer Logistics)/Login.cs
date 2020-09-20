@@ -49,6 +49,7 @@ namespace Information_Management_System_Acer_Logistics_
 
 			return results; 
 		}
+		
 		private void button1_Click(object sender, EventArgs e)
 		{
 			AcerLogisics my = new AcerLogisics();
@@ -57,7 +58,7 @@ namespace Information_Management_System_Acer_Logistics_
 				my.ShowDialog();
 			else
 				errorProvider1.SetError(txtPassword, "Invaid password");
-			txtPassword.Text = string.Empty;
+			
 		}
 
 		private void showCheckBox_CheckedChanged(object sender, EventArgs e)
