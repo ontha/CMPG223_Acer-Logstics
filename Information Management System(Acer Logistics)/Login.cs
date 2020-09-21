@@ -19,7 +19,6 @@ namespace Information_Management_System_Acer_Logistics_
 			InitializeComponent();
 		}
 
-		
 		private SqlConnection con;
 		private SqlDataAdapter adp;
 		private SqlCommand comm;

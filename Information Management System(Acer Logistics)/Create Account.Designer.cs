@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			this.txtUsername = new System.Windows.Forms.TextBox();
 			this.txtPassword = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
@@ -36,10 +37,12 @@
 			this.txtConfirm = new System.Windows.Forms.TextBox();
 			this.btnEnter = new System.Windows.Forms.Button();
 			this.lblBack = new System.Windows.Forms.Label();
-			this.label5 = new System.Windows.Forms.Label();
+			this.lblSuggested = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
 			this.txtId = new System.Windows.Forms.TextBox();
+			this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+			((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// txtUsername
@@ -51,7 +54,7 @@
 			// 
 			// txtPassword
 			// 
-			this.txtPassword.Location = new System.Drawing.Point(183, 143);
+			this.txtPassword.Location = new System.Drawing.Point(183, 121);
 			this.txtPassword.Name = "txtPassword";
 			this.txtPassword.Size = new System.Drawing.Size(100, 20);
 			this.txtPassword.TabIndex = 1;
@@ -68,7 +71,7 @@
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(71, 154);
+			this.label2.Location = new System.Drawing.Point(71, 132);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(106, 13);
 			this.label2.TabIndex = 3;
@@ -77,7 +80,7 @@
 			// label3
 			// 
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(84, 176);
+			this.label3.Location = new System.Drawing.Point(84, 154);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(93, 13);
 			this.label3.TabIndex = 4;
@@ -85,39 +88,41 @@
 			// 
 			// txtConfirm
 			// 
-			this.txtConfirm.Location = new System.Drawing.Point(183, 169);
+			this.txtConfirm.Location = new System.Drawing.Point(183, 147);
 			this.txtConfirm.Name = "txtConfirm";
 			this.txtConfirm.Size = new System.Drawing.Size(100, 20);
 			this.txtConfirm.TabIndex = 5;
 			// 
 			// btnEnter
 			// 
-			this.btnEnter.Location = new System.Drawing.Point(144, 210);
+			this.btnEnter.Location = new System.Drawing.Point(165, 205);
 			this.btnEnter.Name = "btnEnter";
 			this.btnEnter.Size = new System.Drawing.Size(75, 28);
 			this.btnEnter.TabIndex = 6;
 			this.btnEnter.Text = "Enter";
 			this.btnEnter.UseVisualStyleBackColor = true;
+			this.btnEnter.Click += new System.EventHandler(this.btnEnter_Click);
 			// 
 			// lblBack
 			// 
 			this.lblBack.AutoSize = true;
 			this.lblBack.ForeColor = System.Drawing.SystemColors.Highlight;
-			this.lblBack.Location = new System.Drawing.Point(36, 220);
+			this.lblBack.Location = new System.Drawing.Point(71, 220);
 			this.lblBack.Name = "lblBack";
 			this.lblBack.Size = new System.Drawing.Size(32, 13);
 			this.lblBack.TabIndex = 7;
 			this.lblBack.Text = "Back";
 			// 
-			// label5
+			// lblSuggested
 			// 
-			this.label5.AutoSize = true;
-			this.label5.ForeColor = System.Drawing.Color.Red;
-			this.label5.Location = new System.Drawing.Point(133, 118);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(58, 13);
-			this.label5.TabIndex = 8;
-			this.label5.Text = "Suggested";
+			this.lblSuggested.AutoSize = true;
+			this.lblSuggested.ForeColor = System.Drawing.Color.Red;
+			this.lblSuggested.Location = new System.Drawing.Point(33, 177);
+			this.lblSuggested.Name = "lblSuggested";
+			this.lblSuggested.Size = new System.Drawing.Size(58, 13);
+			this.lblSuggested.TabIndex = 8;
+			this.lblSuggested.Text = "Suggested";
+			this.lblSuggested.Visible = false;
 			// 
 			// label4
 			// 
@@ -146,6 +151,10 @@
 			this.txtId.Size = new System.Drawing.Size(100, 20);
 			this.txtId.TabIndex = 11;
 			// 
+			// errorProvider1
+			// 
+			this.errorProvider1.ContainerControl = this;
+			// 
 			// Create_Account
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -154,7 +163,7 @@
 			this.Controls.Add(this.txtId);
 			this.Controls.Add(this.label6);
 			this.Controls.Add(this.label4);
-			this.Controls.Add(this.label5);
+			this.Controls.Add(this.lblSuggested);
 			this.Controls.Add(this.lblBack);
 			this.Controls.Add(this.btnEnter);
 			this.Controls.Add(this.txtConfirm);
@@ -165,6 +174,7 @@
 			this.Controls.Add(this.txtUsername);
 			this.Name = "Create_Account";
 			this.Text = "Create_Account";
+			((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -180,9 +190,10 @@
 		private System.Windows.Forms.TextBox txtConfirm;
 		private System.Windows.Forms.Button btnEnter;
 		private System.Windows.Forms.Label lblBack;
-		private System.Windows.Forms.Label label5;
+		private System.Windows.Forms.Label lblSuggested;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.TextBox txtId;
+		private System.Windows.Forms.ErrorProvider errorProvider1;
 	}
 }
