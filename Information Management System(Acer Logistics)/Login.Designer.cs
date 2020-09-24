@@ -36,7 +36,7 @@
 			this.txtID = new System.Windows.Forms.TextBox();
 			this.txtPassword = new System.Windows.Forms.TextBox();
 			this.label6 = new System.Windows.Forms.Label();
-			this.label7 = new System.Windows.Forms.Label();
+			this.lblFP = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
 			this.showCheckBox = new System.Windows.Forms.CheckBox();
 			this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
@@ -102,24 +102,25 @@
 			this.label6.AutoSize = true;
 			this.label6.Font = new System.Drawing.Font("Century", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label6.ForeColor = System.Drawing.SystemColors.Highlight;
-			this.label6.Location = new System.Drawing.Point(63, 178);
+			this.label6.Location = new System.Drawing.Point(87, 178);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(62, 15);
 			this.label6.TabIndex = 9;
 			this.label6.Text = "New user?";
 			this.label6.Click += new System.EventHandler(this.label6_Click);
 			// 
-			// label7
+			// lblFP
 			// 
-			this.label7.AutoSize = true;
-			this.label7.Font = new System.Drawing.Font("Century", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label7.ForeColor = System.Drawing.SystemColors.Highlight;
-			this.label7.Location = new System.Drawing.Point(150, 178);
-			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(97, 15);
-			this.label7.TabIndex = 10;
-			this.label7.Text = "Forgot password?";
-			this.label7.Click += new System.EventHandler(this.label7_Click);
+			this.lblFP.AutoSize = true;
+			this.lblFP.Font = new System.Drawing.Font("Century", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblFP.ForeColor = System.Drawing.SystemColors.Highlight;
+			this.lblFP.Location = new System.Drawing.Point(181, 178);
+			this.lblFP.Name = "lblFP";
+			this.lblFP.Size = new System.Drawing.Size(97, 15);
+			this.lblFP.TabIndex = 10;
+			this.lblFP.Text = "Forgot password?";
+			this.lblFP.Visible = false;
+			this.lblFP.Click += new System.EventHandler(this.label7_Click);
 			// 
 			// label5
 			// 
@@ -153,7 +154,7 @@
 			this.ClientSize = new System.Drawing.Size(335, 332);
 			this.Controls.Add(this.showCheckBox);
 			this.Controls.Add(this.label5);
-			this.Controls.Add(this.label7);
+			this.Controls.Add(this.lblFP);
 			this.Controls.Add(this.label6);
 			this.Controls.Add(this.txtPassword);
 			this.Controls.Add(this.txtID);
@@ -179,7 +180,7 @@
 		private System.Windows.Forms.TextBox txtID;
 		private System.Windows.Forms.TextBox txtPassword;
 		private System.Windows.Forms.Label label6;
-		private System.Windows.Forms.Label label7;
+		private System.Windows.Forms.Label lblFP;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.CheckBox showCheckBox;
 		private System.Windows.Forms.ErrorProvider errorProvider1;

@@ -21,5 +21,21 @@ namespace Information_Management_System_Acer_Logistics_
 		{
 
 		}
+		public bool QuizCreated { get; set; }
+		public string getQuiz { get; set; }
+		public string getAnswer { get; set; }
+		private void btnConfirm_Click(object sender, EventArgs e)
+		{
+			if(QuizcomboBox.SelectedIndex != -1 || QuizcomboBox.Text != string.Empty)
+			{
+				if (txtAnswer.Text != string.Empty)
+				{
+					QuizCreated = true;
+					getQuiz = QuizcomboBox.Text;
+					getAnswer = txtAnswer.Text;
+					this.Close();
+				}
+			}
+		}
 	}
 }

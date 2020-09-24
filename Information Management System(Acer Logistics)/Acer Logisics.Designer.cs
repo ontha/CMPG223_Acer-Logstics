@@ -43,6 +43,7 @@
 			this.hRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.salesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.logisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.Inventory.SuspendLayout();
 			this.Management.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
@@ -133,6 +134,8 @@
 			// 
 			// fileToolStripMenuItem
 			// 
+			this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
 			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
 			this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
 			this.fileToolStripMenuItem.Text = "File";
@@ -159,13 +162,14 @@
             this.logisticsToolStripMenuItem});
 			this.hRDepartmentToolStripMenuItem.Name = "hRDepartmentToolStripMenuItem";
 			this.hRDepartmentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.hRDepartmentToolStripMenuItem.Text = "HR Department";
+			this.hRDepartmentToolStripMenuItem.Text = "Departments";
 			// 
 			// hRToolStripMenuItem
 			// 
 			this.hRToolStripMenuItem.Name = "hRToolStripMenuItem";
 			this.hRToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.hRToolStripMenuItem.Text = "HR";
+			this.hRToolStripMenuItem.Click += new System.EventHandler(this.hRToolStripMenuItem_Click);
 			// 
 			// salesToolStripMenuItem
 			// 
@@ -179,6 +183,12 @@
 			this.logisticsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.logisticsToolStripMenuItem.Text = "Logistics";
 			// 
+			// exitToolStripMenuItem
+			// 
+			this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+			this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.exitToolStripMenuItem.Text = "Exit";
+			// 
 			// AcerLogisics
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -189,6 +199,7 @@
 			this.MainMenuStrip = this.menuStrip1;
 			this.Name = "AcerLogisics";
 			this.Text = "Management";
+			this.Load += new System.EventHandler(this.AcerLogisics_Load);
 			this.Inventory.ResumeLayout(false);
 			this.Management.ResumeLayout(false);
 			this.menuStrip1.ResumeLayout(false);
@@ -215,5 +226,6 @@
 		private System.Windows.Forms.ToolStripMenuItem hRToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem salesToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem logisticsToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
 	}
 }

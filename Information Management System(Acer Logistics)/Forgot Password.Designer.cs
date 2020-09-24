@@ -30,8 +30,7 @@
 		{
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
-			this.txtPassword = new System.Windows.Forms.TextBox();
-			this.PasscheckBox = new System.Windows.Forms.CheckBox();
+			this.txtName = new System.Windows.Forms.TextBox();
 			this.progressBar1 = new System.Windows.Forms.ProgressBar();
 			this.button1 = new System.Windows.Forms.Button();
 			this.SuspendLayout();
@@ -56,24 +55,13 @@
 			this.label2.TabIndex = 1;
 			this.label2.Text = "Enter your username:";
 			// 
-			// txtPassword
+			// txtName
 			// 
-			this.txtPassword.Location = new System.Drawing.Point(141, 69);
-			this.txtPassword.Name = "txtPassword";
-			this.txtPassword.PasswordChar = '*';
-			this.txtPassword.Size = new System.Drawing.Size(111, 20);
-			this.txtPassword.TabIndex = 2;
-			// 
-			// PasscheckBox
-			// 
-			this.PasscheckBox.AutoSize = true;
-			this.PasscheckBox.Location = new System.Drawing.Point(258, 71);
-			this.PasscheckBox.Name = "PasscheckBox";
-			this.PasscheckBox.Size = new System.Drawing.Size(51, 17);
-			this.PasscheckBox.TabIndex = 3;
-			this.PasscheckBox.Text = "show";
-			this.PasscheckBox.UseVisualStyleBackColor = true;
-			this.PasscheckBox.CheckedChanged += new System.EventHandler(this.PasscheckBox_CheckedChanged);
+			this.txtName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+			this.txtName.Location = new System.Drawing.Point(141, 69);
+			this.txtName.Name = "txtName";
+			this.txtName.Size = new System.Drawing.Size(111, 20);
+			this.txtName.TabIndex = 2;
 			// 
 			// progressBar1
 			// 
@@ -91,16 +79,16 @@
 			this.button1.TabIndex = 5;
 			this.button1.Text = "Check";
 			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// Forgot_Password
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(384, 210);
+			this.ClientSize = new System.Drawing.Size(356, 202);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.progressBar1);
-			this.Controls.Add(this.PasscheckBox);
-			this.Controls.Add(this.txtPassword);
+			this.Controls.Add(this.txtName);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
 			this.Name = "Forgot_Password";
@@ -115,9 +103,8 @@
 
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.TextBox txtPassword;
-		private System.Windows.Forms.CheckBox PasscheckBox;
 		private System.Windows.Forms.ProgressBar progressBar1;
 		private System.Windows.Forms.Button button1;
+		public System.Windows.Forms.TextBox txtName;
 	}
 }

@@ -20,43 +20,88 @@ namespace Information_Management_System_Acer_Logistics_
 		}
 
 		private SqlConnection con;
-		private SqlDataAdapter adp;
 		private SqlCommand comm;
-		private DataSet ds;
 		private SqlDataReader dRead;
+		private int UserID;
+		string readAll = "SELECT * FROM Login";
+		string readAEmpl = "SELECT * FROM Employees";
 		string conStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Acer\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Management System(Acer Logistics)\ManagementDB.mdf;Integrated Security=True";
 		private void Form1_Load(object sender, EventArgs e)
 		{
 			
 		}
-		public bool authenticate(string userName, string password)
+		public bool authenticate(string userName, string password, ref int user)
 		{
 			bool results = false;
 			con = new SqlConnection(conStr);
 			con.Open();
-			string readAll = "SELECT * FROM Login";
 			comm = new SqlCommand(readAll, con);
 			dRead = comm.ExecuteReader();
 
 			while (dRead.Read())
 			{
 				if (dRead.GetValue(1).ToString() == userName && dRead.GetValue(2).ToString() == password)
+				{
 					results = true;
+					user = int.Parse(dRead.GetValue(0).ToString());
+				}
 			}
-			
+			if (!results)
+				lblFP.Visible = true;
 			con.Close();
 
 			return results; 
 		}
-		
+		public string getUserdet(string queiry, int id)
+		{
+			string details = null;
+			con.Open();
+			dRead = (new SqlCommand(queiry, con)).ExecuteReader();
+			while (dRead.Read())
+			{
+				if(dRead.GetValue(8).ToString() == id.ToString())
+				{
+					details += dRead.GetValue(1).ToString() + "," + dRead.GetValue(2).ToString() + "," + dRead.GetValue(7).ToString();
+				}
+			}
+			return details;
+		}
+		public string getuserName { get; set; }
 		private void button1_Click(object sender, EventArgs e)
 		{
-			AcerLogisics my = new AcerLogisics();
+			try
+			{
+				AcerLogisics AL = new AcerLogisics();
+				Create_Account CA = new Create_Account();
+				
+				if (authenticate(txtID.Text, txtPassword.Text, ref UserID))
+				{
+					MessageBox.Show("User at " + CA.getID("SELECT * FROM Login", txtID.Text).ToString());
+					string[] tmp = getUserdet(readAEmpl, CA.getID("SELECT * FROM Login", txtID.Text)).Split(',');
+					getuserName = tmp[0] + " " + tmp[1];
+					MessageBox.Show(getuserName);
 
-			if (authenticate(txtID.Text, txtPassword.Text))
-				my.ShowDialog();
-			else
-				errorProvider1.SetError(txtPassword, "Invaid password");
+					if (tmp[2] == "Manager")
+					{
+						AL.ShowDialog();
+						this.Close();
+					}
+					else if (tmp[2] == "HR")
+					{
+						(new Human_Resources()).ShowDialog();
+						this.Close();
+					}
+
+				}
+				else
+				{
+					errorProvider1.SetError(txtPassword, "Invaid password");
+				}
+			}
+			catch(Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
 			
 		}
 
@@ -76,7 +121,7 @@ namespace Information_Management_System_Acer_Logistics_
 
 		private void label7_Click(object sender, EventArgs e)
 		{
-			Forgot_Password forgotPass = new Forgot_Password();
+			Quiz forgotPass = new Quiz();
 			forgotPass.ShowDialog();
 		}
 	}

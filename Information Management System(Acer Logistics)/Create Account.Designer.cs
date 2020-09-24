@@ -95,7 +95,7 @@
 			// 
 			// btnEnter
 			// 
-			this.btnEnter.Location = new System.Drawing.Point(165, 205);
+			this.btnEnter.Location = new System.Drawing.Point(157, 212);
 			this.btnEnter.Name = "btnEnter";
 			this.btnEnter.Size = new System.Drawing.Size(75, 28);
 			this.btnEnter.TabIndex = 6;
@@ -159,7 +159,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(345, 258);
+			this.ClientSize = new System.Drawing.Size(367, 284);
 			this.Controls.Add(this.txtId);
 			this.Controls.Add(this.label6);
 			this.Controls.Add(this.label4);

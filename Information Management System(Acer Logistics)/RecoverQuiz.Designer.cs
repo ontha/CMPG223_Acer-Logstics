@@ -72,12 +72,13 @@
 			// 
 			// btnConfirm
 			// 
-			this.btnConfirm.Location = new System.Drawing.Point(150, 143);
+			this.btnConfirm.Location = new System.Drawing.Point(164, 142);
 			this.btnConfirm.Name = "btnConfirm";
 			this.btnConfirm.Size = new System.Drawing.Size(75, 23);
 			this.btnConfirm.TabIndex = 4;
 			this.btnConfirm.Text = "Confirm";
 			this.btnConfirm.UseVisualStyleBackColor = true;
+			this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
 			// 
 			// Back
 			// 
