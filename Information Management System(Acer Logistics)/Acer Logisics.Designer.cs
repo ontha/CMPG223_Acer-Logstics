@@ -35,15 +35,18 @@
 			this.Change = new System.Windows.Forms.GroupBox();
 			this.Add = new System.Windows.Forms.GroupBox();
 			this.Management = new System.Windows.Forms.TabControl();
-			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+			this.lblUser = new System.Windows.Forms.Label();
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.hRDepartmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.hRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.salesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.logisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+			this.label1 = new System.Windows.Forms.Label();
+			this.reports.SuspendLayout();
 			this.Inventory.SuspendLayout();
 			this.Management.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
@@ -51,6 +54,7 @@
 			// 
 			// reports
 			// 
+			this.reports.Controls.Add(this.lblUser);
 			this.reports.Location = new System.Drawing.Point(4, 22);
 			this.reports.Name = "reports";
 			this.reports.Padding = new System.Windows.Forms.Padding(3);
@@ -120,17 +124,14 @@
 			this.Management.Size = new System.Drawing.Size(775, 407);
 			this.Management.TabIndex = 0;
 			// 
-			// menuStrip1
+			// lblUser
 			// 
-			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.editToolStripMenuItem,
-            this.viewToolStripMenuItem});
-			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-			this.menuStrip1.Name = "menuStrip1";
-			this.menuStrip1.Size = new System.Drawing.Size(800, 24);
-			this.menuStrip1.TabIndex = 1;
-			this.menuStrip1.Text = "menuStrip1";
+			this.lblUser.AutoSize = true;
+			this.lblUser.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblUser.Location = new System.Drawing.Point(506, 26);
+			this.lblUser.Name = "lblUser";
+			this.lblUser.Size = new System.Drawing.Size(0, 17);
+			this.lblUser.TabIndex = 2;
 			// 
 			// fileToolStripMenuItem
 			// 
@@ -139,6 +140,12 @@
 			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
 			this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
 			this.fileToolStripMenuItem.Text = "File";
+			// 
+			// exitToolStripMenuItem
+			// 
+			this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+			this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
+			this.exitToolStripMenuItem.Text = "Exit";
 			// 
 			// editToolStripMenuItem
 			// 
@@ -161,45 +168,70 @@
             this.salesToolStripMenuItem,
             this.logisticsToolStripMenuItem});
 			this.hRDepartmentToolStripMenuItem.Name = "hRDepartmentToolStripMenuItem";
-			this.hRDepartmentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.hRDepartmentToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
 			this.hRDepartmentToolStripMenuItem.Text = "Departments";
 			// 
 			// hRToolStripMenuItem
 			// 
 			this.hRToolStripMenuItem.Name = "hRToolStripMenuItem";
-			this.hRToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.hRToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
 			this.hRToolStripMenuItem.Text = "HR";
 			this.hRToolStripMenuItem.Click += new System.EventHandler(this.hRToolStripMenuItem_Click);
 			// 
 			// salesToolStripMenuItem
 			// 
 			this.salesToolStripMenuItem.Name = "salesToolStripMenuItem";
-			this.salesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.salesToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
 			this.salesToolStripMenuItem.Text = "Sales";
 			// 
 			// logisticsToolStripMenuItem
 			// 
 			this.logisticsToolStripMenuItem.Name = "logisticsToolStripMenuItem";
-			this.logisticsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.logisticsToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
 			this.logisticsToolStripMenuItem.Text = "Logistics";
 			// 
-			// exitToolStripMenuItem
+			// menuStrip1
 			// 
-			this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-			this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.exitToolStripMenuItem.Text = "Exit";
+			this.menuStrip1.BackColor = System.Drawing.SystemColors.ButtonShadow;
+			this.menuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
+			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.editToolStripMenuItem,
+            this.viewToolStripMenuItem});
+			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+			this.menuStrip1.Name = "menuStrip1";
+			this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+			this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+			this.menuStrip1.TabIndex = 1;
+			this.menuStrip1.Text = "menuStrip1";
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.BackColor = System.Drawing.SystemColors.ControlDark;
+			this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.Location = new System.Drawing.Point(550, 0);
+			this.label1.Name = "label1";
+			this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+			this.label1.Size = new System.Drawing.Size(53, 21);
+			this.label1.TabIndex = 2;
+			this.label1.Text = "label1";
+			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// AcerLogisics
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.Controls.Add(this.label1);
 			this.Controls.Add(this.Management);
 			this.Controls.Add(this.menuStrip1);
 			this.MainMenuStrip = this.menuStrip1;
 			this.Name = "AcerLogisics";
 			this.Text = "Management";
 			this.Load += new System.EventHandler(this.AcerLogisics_Load);
+			this.reports.ResumeLayout(false);
+			this.reports.PerformLayout();
 			this.Inventory.ResumeLayout(false);
 			this.Management.ResumeLayout(false);
 			this.menuStrip1.ResumeLayout(false);
@@ -218,14 +250,16 @@
 		private System.Windows.Forms.GroupBox Change;
 		private System.Windows.Forms.GroupBox Add;
 		private System.Windows.Forms.TabControl Management;
-		private System.Windows.Forms.MenuStrip menuStrip1;
+		public System.Windows.Forms.Label lblUser;
 		private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem hRDepartmentToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem hRToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem salesToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem logisticsToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+		private System.Windows.Forms.MenuStrip menuStrip1;
+		public System.Windows.Forms.Label label1;
 	}
 }

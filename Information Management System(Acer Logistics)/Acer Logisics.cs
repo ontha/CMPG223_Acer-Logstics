@@ -22,11 +22,10 @@ namespace Information_Management_System_Acer_Logistics_
 			Human_Resources HR = new Human_Resources();
 			HR.ShowDialog();
 		}
-		public string getNm { get; set; }
+		
 		private void AcerLogisics_Load(object sender, EventArgs e)
 		{
-			getNm = (new Login()).getuserName;
-			//lblUser.Text = getNm;
+			
 		}
 	}
 }

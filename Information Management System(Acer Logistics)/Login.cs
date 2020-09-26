@@ -76,10 +76,11 @@ namespace Information_Management_System_Acer_Logistics_
 				
 				if (authenticate(txtID.Text, txtPassword.Text, ref UserID))
 				{
-					MessageBox.Show("User at " + CA.getID("SELECT * FROM Login", txtID.Text).ToString());
+					//MessageBox.Show("User at " + CA.getID("SELECT * FROM Login", txtID.Text).ToString());
 					string[] tmp = getUserdet(readAEmpl, CA.getID("SELECT * FROM Login", txtID.Text)).Split(',');
-					getuserName = tmp[0] + " " + tmp[1];
-					MessageBox.Show(getuserName);
+					AL.label1.Text = "Logged in as " + tmp[0] + " " + tmp[1];
+					
+
 
 					if (tmp[2] == "Manager")
 					{
