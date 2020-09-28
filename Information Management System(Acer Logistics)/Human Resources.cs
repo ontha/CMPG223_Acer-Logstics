@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Runtime.InteropServices;
 using System.Security.Policy;
+using System.Security.Permissions;
 
 namespace Information_Management_System_Acer_Logistics_
 {
@@ -78,28 +79,31 @@ namespace Information_Management_System_Acer_Logistics_
 				return true;
 
 		}
-		public void wrongInput(string input)
-		{
-			string[] tmp = input.Split();
-			string results; 
-			for(int i=0; i<tmp.Length; i++)
-			{
-				
-			}
-		}
+
 		private void btnUpdate_Click(object sender, EventArgs e)
 		{
 			string updateQueiry = "UPDATE Employees SET " + columnComboBox.Text + " = '" + txtNewVal.Text + "' WHERE Id = '" + int.Parse(txtIdUp.Text) + "'";
 			updatedata(updateQueiry);
 			readAll(readEmployees);
 		}
-
+		public void deletedata(string deleteQueiry)
+		{
+			con = new SqlConnection(conStr);
+			con.Open();
+			comm = new SqlCommand(deleteQueiry, con);
+			comm.ExecuteNonQuery();
+			con.Close();
+		}
 		private void btnDelete_Click(object sender, EventArgs e)
 		{
 			DialogResult delete = MessageBox.Show("You wont be able you retrieve this information", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
 			if(delete == DialogResult.OK)
 			{
-				MessageBox.Show("User removed", "Confirmation");
+				string del = "DELETE FROM Employees WHERE Id = '" + textBox1.Text + "'";
+				deletedata(del);
+				MessageBox.Show(textBox1.Text + "Deleted");
+				textBox1.Text = string.Empty;
+				readAll(readEmployees);
 			}
 		}
 		public void addEmployee(string queiry, string userNm, string userLn, char gender, string email, int PN, string Addres, string pos)

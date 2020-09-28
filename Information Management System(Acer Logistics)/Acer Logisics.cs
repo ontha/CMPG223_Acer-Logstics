@@ -27,5 +27,10 @@ namespace Information_Management_System_Acer_Logistics_
 		{
 			
 		}
+
+		private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
 	}
 }

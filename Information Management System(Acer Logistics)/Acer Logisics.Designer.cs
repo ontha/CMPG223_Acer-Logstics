@@ -29,13 +29,13 @@
 		private void InitializeComponent()
 		{
 			this.reports = new System.Windows.Forms.TabPage();
+			this.lblUser = new System.Windows.Forms.Label();
 			this.receiveSo = new System.Windows.Forms.TabPage();
 			this.Inventory = new System.Windows.Forms.TabPage();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
 			this.Change = new System.Windows.Forms.GroupBox();
 			this.Add = new System.Windows.Forms.GroupBox();
 			this.Management = new System.Windows.Forms.TabControl();
-			this.lblUser = new System.Windows.Forms.Label();
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,6 +62,15 @@
 			this.reports.TabIndex = 4;
 			this.reports.Text = "Reports";
 			this.reports.UseVisualStyleBackColor = true;
+			// 
+			// lblUser
+			// 
+			this.lblUser.AutoSize = true;
+			this.lblUser.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblUser.Location = new System.Drawing.Point(506, 26);
+			this.lblUser.Name = "lblUser";
+			this.lblUser.Size = new System.Drawing.Size(0, 17);
+			this.lblUser.TabIndex = 2;
 			// 
 			// receiveSo
 			// 
@@ -124,15 +133,6 @@
 			this.Management.Size = new System.Drawing.Size(775, 407);
 			this.Management.TabIndex = 0;
 			// 
-			// lblUser
-			// 
-			this.lblUser.AutoSize = true;
-			this.lblUser.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblUser.Location = new System.Drawing.Point(506, 26);
-			this.lblUser.Name = "lblUser";
-			this.lblUser.Size = new System.Drawing.Size(0, 17);
-			this.lblUser.TabIndex = 2;
-			// 
 			// fileToolStripMenuItem
 			// 
 			this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -144,8 +144,9 @@
 			// exitToolStripMenuItem
 			// 
 			this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-			this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
+			this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.exitToolStripMenuItem.Text = "Exit";
+			this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
 			// 
 			// editToolStripMenuItem
 			// 
@@ -168,7 +169,7 @@
             this.salesToolStripMenuItem,
             this.logisticsToolStripMenuItem});
 			this.hRDepartmentToolStripMenuItem.Name = "hRDepartmentToolStripMenuItem";
-			this.hRDepartmentToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+			this.hRDepartmentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.hRDepartmentToolStripMenuItem.Text = "Departments";
 			// 
 			// hRToolStripMenuItem

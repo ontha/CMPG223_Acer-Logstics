@@ -67,7 +67,7 @@
 			this.dataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataView.Location = new System.Drawing.Point(12, 265);
 			this.dataView.Name = "dataView";
-			this.dataView.Size = new System.Drawing.Size(847, 223);
+			this.dataView.Size = new System.Drawing.Size(818, 223);
 			this.dataView.TabIndex = 0;
 			// 
 			// groupBox3
